@@ -26,13 +26,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+I learned about the express router which streamlines the routing process for paths in the api for developers, and I learned about the express() server which is a one liner for setting up a server.
+
 - [ ] Describe Middleware?
+
+Middleware is software (functions) that runs in the middle of the other functions. Some are custom, some are built in to express, and others are custom but imports.  To declare a middleware function in an express api you simply make a function with the homies and next as parameters, and either call a .use in your .uses (caveat: order matters so logically think of placement) in your router files to have it local to a router, in your server file to have it global in the app, or as a third parameter in your .method method (in between the path and the homies) to have it local to that particular method.
 
 - [ ] Describe a Resource?
 
+A resource is anything you use to make your app.  It can be a file, a database, or a local or external path.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+The API can return a res.status http code of 200, 201,etc depending on the type of request.  In terms of the actual client it can display (res.send or res.json) some data that the front-end will display to show the client whatever it is their program is meant to display.
+
 - [ ] How can we partition our application into sub-applications?
+
+By using the express router.  When you do this server.use becomes router.use for the particular path, and the path has its own .method methods.  Each path will correspond to a url on the app that will pull up the particular sub-application when requested.
 
 ## Project Setup
 
